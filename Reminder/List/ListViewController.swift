@@ -9,8 +9,12 @@ import UIKit
 import RealmSwift
 
 final class ListViewController: BaseViewController<ListView> {
-    private var list: Results<Todo>!
     let realm = try! Realm()
+    private var list: Results<Todo>! {
+        didSet {
+            rootView.listTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +42,26 @@ extension ListViewController {
         addButton.tintColor = .systemBlue
         navigationItem.leftBarButtonItem = addButton //임시
         
-        let menuButton = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(menuButtonClicked))
+        let menu = configurePullDownButton()
+        let menuButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "ellipsis.circle"), target: nil, action: nil, menu: menu)
         menuButton.tintColor = .systemBlue
         navigationItem.rightBarButtonItem = menuButton
     }
+    
     @objc private func addButtonClicked() { //임시
         present(AddViewController(), animated: true)
     }
-    @objc private func menuButtonClicked() {
-        
+    
+    private func configurePullDownButton() -> UIMenu {
+        let byDeadlineAction = UIAction(title: "마감일 순으로 보기") { _ in
+            self.list = self.list.sorted(byKeyPath: "deadline", ascending: true)
+        }
+        let bytitleAction = UIAction(title: "제목 순으로 보기") { _ in
+            self.list = self.list.sorted(byKeyPath: "toDoTitle", ascending: true)
+        }
+        return UIMenu(children: [byDeadlineAction, bytitleAction])
     }
+}
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
