@@ -20,6 +20,7 @@
 		CE7901F12C34053F00F8EAB6 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CE7901F02C34053F00F8EAB6 /* Toast */; };
 		CE7901F32C3406B200F8EAB6 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F22C3406B200F8EAB6 /* AddView.swift */; };
 		CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F42C3406C000F8EAB6 /* AddViewController.swift */; };
+		CE7901F72C34220C00F8EAB6 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F62C34220C00F8EAB6 /* ListTableViewCell.swift */; };
 		CE7901FA2C34224400F8EAB6 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */; };
 		CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FC2C342A1800F8EAB6 /* Todo.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		CE7901E42C34025500F8EAB6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		CE7901F22C3406B200F8EAB6 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CE7901F42C3406C000F8EAB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		CE7901F62C34220C00F8EAB6 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
 		CE7901FC2C342A1800F8EAB6 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 			children = (
 				CE7901E22C34023900F8EAB6 /* ListViewController.swift */,
 				CE7901E42C34025500F8EAB6 /* ListView.swift */,
+				CE7901F62C34220C00F8EAB6 /* ListTableViewCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */,
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
+				CE7901F72C34220C00F8EAB6 /* ListTableViewCell.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
 				CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */,
 				CE7901E32C34023900F8EAB6 /* ListViewController.swift in Sources */,
