@@ -21,6 +21,7 @@
 		CE7901F32C3406B200F8EAB6 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F22C3406B200F8EAB6 /* AddView.swift */; };
 		CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F42C3406C000F8EAB6 /* AddViewController.swift */; };
 		CE7901FA2C34224400F8EAB6 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */; };
+		CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FC2C342A1800F8EAB6 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		CE7901F22C3406B200F8EAB6 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CE7901F42C3406C000F8EAB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
+		CE7901FC2C342A1800F8EAB6 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		CE7901C72C33F78600F8EAB6 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				CE7901FB2C34298F00F8EAB6 /* Database */,
 				CE7901F82C34222D00F8EAB6 /* Extension */,
 				CE7901DC2C33FDC400F8EAB6 /* App */,
 				CE7901DD2C33FDCD00F8EAB6 /* Base */,
@@ -126,6 +129,14 @@
 				CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE7901FB2C34298F00F8EAB6 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CE7901FC2C342A1800F8EAB6 /* Todo.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
+				CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */,
 				CE7901E32C34023900F8EAB6 /* ListViewController.swift in Sources */,
 				CE7901FA2C34224400F8EAB6 /* IdentifierProtocol.swift in Sources */,
 				CE7901DF2C34003700F8EAB6 /* BaseView.swift in Sources */,
