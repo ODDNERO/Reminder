@@ -20,7 +20,7 @@ final class AddView: BaseView {
         view.backgroundColor = .systemGray5
         return view
     }()
-    private let memoTextField = {
+    let memoTextField = {
         let textField = UITextField()
         textField.placeholder = " 메모"
         textField.tintColor = .customSky
