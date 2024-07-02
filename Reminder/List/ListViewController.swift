@@ -6,14 +6,33 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class ListViewController: BaseViewController<ListView> {
-
+    private var list: Results<Todo>!
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
+        list = realm.objects(Todo.self).sorted(byKeyPath: "deadline", ascending: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        let realm = try! Realm()
+//        print(realm.configuration.fileURL)
+        rootView.listTableView.reloadData()
+    }
+    
+    override func settingDelegate() {
+        rootView.listTableView.delegate = self
+        rootView.listTableView.dataSource = self
+        rootView.listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
+    }
+}
+
+extension ListViewController {
     private func settingNavigationBar() {
         let addButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addButtonClicked))
         addButton.tintColor = .systemBlue
@@ -28,5 +47,17 @@ final class ListViewController: BaseViewController<ListView> {
     }
     @objc private func menuButtonClicked() {
         
+    }
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier) as! ListTableViewCell
+        let data = list[indexPath.row]
+        cell.update(data: data)
+        return cell
     }
 }

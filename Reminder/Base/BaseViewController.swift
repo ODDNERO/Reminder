@@ -17,9 +17,14 @@ class BaseViewController<RootView: UIView>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addEventHandler()
+        settingDelegate()
     }
     
     func addEventHandler() {
+        
+    }
+    
+    func settingDelegate() {
         
     }
 }
