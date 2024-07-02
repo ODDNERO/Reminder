@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901C82C33F78600F8EAB6 /* AppDelegate.swift */; };
 		CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901CA2C33F78600F8EAB6 /* SceneDelegate.swift */; };
-		CE7901CD2C33F78600F8EAB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901CC2C33F78600F8EAB6 /* ViewController.swift */; };
+		CE7901CD2C33F78600F8EAB6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901CC2C33F78600F8EAB6 /* BaseViewController.swift */; };
 		CE7901D22C33F78800F8EAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7901D12C33F78800F8EAB6 /* Assets.xcassets */; };
 		CE7901D52C33F78900F8EAB6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE7901D42C33F78900F8EAB6 /* Base */; };
+		CE7901DF2C34003700F8EAB6 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901DE2C34003700F8EAB6 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE7901C52C33F78600F8EAB6 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7901C82C33F78600F8EAB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7901CA2C33F78600F8EAB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE7901CC2C33F78600F8EAB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE7901CC2C33F78600F8EAB6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CE7901D12C33F78800F8EAB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7901D42C33F78900F8EAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7901D62C33F78900F8EAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7901DE2C34003700F8EAB6 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		CE7901C72C33F78600F8EAB6 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				CE7901C82C33F78600F8EAB6 /* AppDelegate.swift */,
-				CE7901CA2C33F78600F8EAB6 /* SceneDelegate.swift */,
-				CE7901CC2C33F78600F8EAB6 /* ViewController.swift */,
+				CE7901DC2C33FDC400F8EAB6 /* App */,
+				CE7901DD2C33FDCD00F8EAB6 /* Base */,
 				CE7901D12C33F78800F8EAB6 /* Assets.xcassets */,
 				CE7901D32C33F78900F8EAB6 /* LaunchScreen.storyboard */,
 				CE7901D62C33F78900F8EAB6 /* Info.plist */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		CE7901DC2C33FDC400F8EAB6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE7901C82C33F78600F8EAB6 /* AppDelegate.swift */,
+				CE7901CA2C33F78600F8EAB6 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE7901DD2C33FDCD00F8EAB6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CE7901CC2C33F78600F8EAB6 /* BaseViewController.swift */,
+				CE7901DE2C34003700F8EAB6 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7901CD2C33F78600F8EAB6 /* ViewController.swift in Sources */,
+				CE7901CD2C33F78600F8EAB6 /* BaseViewController.swift in Sources */,
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
+				CE7901DF2C34003700F8EAB6 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
