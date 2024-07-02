@@ -13,8 +13,13 @@
 		CE7901D22C33F78800F8EAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7901D12C33F78800F8EAB6 /* Assets.xcassets */; };
 		CE7901D52C33F78900F8EAB6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE7901D42C33F78900F8EAB6 /* Base */; };
 		CE7901DF2C34003700F8EAB6 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901DE2C34003700F8EAB6 /* BaseView.swift */; };
+		CE7901E32C34023900F8EAB6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901E22C34023900F8EAB6 /* ListViewController.swift */; };
+		CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901E42C34025500F8EAB6 /* ListView.swift */; };
 		CE7901EB2C34034500F8EAB6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE7901EA2C34034500F8EAB6 /* SnapKit */; };
 		CE7901EE2C34038700F8EAB6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE7901ED2C34038700F8EAB6 /* RealmSwift */; };
+		CE7901F12C34053F00F8EAB6 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CE7901F02C34053F00F8EAB6 /* Toast */; };
+		CE7901F32C3406B200F8EAB6 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F22C3406B200F8EAB6 /* AddView.swift */; };
+		CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F42C3406C000F8EAB6 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,10 @@
 		CE7901D42C33F78900F8EAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7901D62C33F78900F8EAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7901DE2C34003700F8EAB6 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CE7901E22C34023900F8EAB6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		CE7901E42C34025500F8EAB6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CE7901F22C3406B200F8EAB6 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		CE7901F42C3406C000F8EAB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7901F12C34053F00F8EAB6 /* Toast in Frameworks */,
 				CE7901EE2C34038700F8EAB6 /* RealmSwift in Frameworks */,
 				CE7901EB2C34034500F8EAB6 /* SnapKit in Frameworks */,
 			);
@@ -62,6 +72,8 @@
 			children = (
 				CE7901DC2C33FDC400F8EAB6 /* App */,
 				CE7901DD2C33FDCD00F8EAB6 /* Base */,
+				CE7901E02C3401EE00F8EAB6 /* List */,
+				CE7901E12C34020200F8EAB6 /* Add */,
 				CE7901D12C33F78800F8EAB6 /* Assets.xcassets */,
 				CE7901D32C33F78900F8EAB6 /* LaunchScreen.storyboard */,
 				CE7901D62C33F78900F8EAB6 /* Info.plist */,
@@ -87,6 +99,24 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		CE7901E02C3401EE00F8EAB6 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CE7901E22C34023900F8EAB6 /* ListViewController.swift */,
+				CE7901E42C34025500F8EAB6 /* ListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		CE7901E12C34020200F8EAB6 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				CE7901F42C3406C000F8EAB6 /* AddViewController.swift */,
+				CE7901F22C3406B200F8EAB6 /* AddView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +136,7 @@
 			packageProductDependencies = (
 				CE7901EA2C34034500F8EAB6 /* SnapKit */,
 				CE7901ED2C34038700F8EAB6 /* RealmSwift */,
+				CE7901F02C34053F00F8EAB6 /* Toast */,
 			);
 			productName = Reminder;
 			productReference = CE7901C52C33F78600F8EAB6 /* Reminder.app */;
@@ -138,6 +169,7 @@
 			packageReferences = (
 				CE7901E92C34034400F8EAB6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE7901EC2C34038700F8EAB6 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				CE7901EF2C34053F00F8EAB6 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = CE7901C62C33F78600F8EAB6 /* Products */;
 			projectDirPath = "";
@@ -165,9 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7901F32C3406B200F8EAB6 /* AddView.swift in Sources */,
 				CE7901CD2C33F78600F8EAB6 /* BaseViewController.swift in Sources */,
+				CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */,
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
+				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
+				CE7901E32C34023900F8EAB6 /* ListViewController.swift in Sources */,
 				CE7901DF2C34003700F8EAB6 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +443,14 @@
 				version = 10.52.1;
 			};
 		};
+		CE7901EF2C34053F00F8EAB6 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -419,6 +463,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE7901EC2C34038700F8EAB6 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		CE7901F02C34053F00F8EAB6 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE7901EF2C34053F00F8EAB6 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
