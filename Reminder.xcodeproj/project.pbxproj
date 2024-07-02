@@ -10,7 +10,6 @@
 		CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901C82C33F78600F8EAB6 /* AppDelegate.swift */; };
 		CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901CA2C33F78600F8EAB6 /* SceneDelegate.swift */; };
 		CE7901CD2C33F78600F8EAB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901CC2C33F78600F8EAB6 /* ViewController.swift */; };
-		CE7901D02C33F78600F8EAB6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE7901CF2C33F78600F8EAB6 /* Base */; };
 		CE7901D22C33F78800F8EAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7901D12C33F78800F8EAB6 /* Assets.xcassets */; };
 		CE7901D52C33F78900F8EAB6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE7901D42C33F78900F8EAB6 /* Base */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		CE7901C82C33F78600F8EAB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7901CA2C33F78600F8EAB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE7901CC2C33F78600F8EAB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE7901CF2C33F78600F8EAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE7901D12C33F78800F8EAB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7901D42C33F78900F8EAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7901D62C33F78900F8EAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				CE7901C82C33F78600F8EAB6 /* AppDelegate.swift */,
 				CE7901CA2C33F78600F8EAB6 /* SceneDelegate.swift */,
 				CE7901CC2C33F78600F8EAB6 /* ViewController.swift */,
-				CE7901CE2C33F78600F8EAB6 /* Main.storyboard */,
 				CE7901D12C33F78800F8EAB6 /* Assets.xcassets */,
 				CE7901D32C33F78900F8EAB6 /* LaunchScreen.storyboard */,
 				CE7901D62C33F78900F8EAB6 /* Info.plist */,
@@ -127,7 +124,6 @@
 			files = (
 				CE7901D22C33F78800F8EAB6 /* Assets.xcassets in Resources */,
 				CE7901D52C33F78900F8EAB6 /* Base in Resources */,
-				CE7901D02C33F78600F8EAB6 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE7901CE2C33F78600F8EAB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE7901CF2C33F78600F8EAB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE7901D32C33F78900F8EAB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +284,6 @@
 				INFOPLIST_FILE = Reminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -328,7 +315,6 @@
 				INFOPLIST_FILE = Reminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
