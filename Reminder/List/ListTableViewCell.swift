@@ -54,7 +54,7 @@ final class ListTableViewCell: UITableViewCell {
     func update(data: Todo) {
         titleLabel.text = data.toDoTitle
         memoLabel.text = data.memo
-        deadlineLabel.text = data.deadline.formatted()
+        deadlineLabel.text = data.deadline?.formatted()
     }
 }
 

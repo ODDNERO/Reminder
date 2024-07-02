@@ -12,7 +12,7 @@ class Todo: Object {
    @Persisted(primaryKey: true) var id: ObjectId
     @Persisted(indexed: true) var toDoTitle: String
     @Persisted var memo: String?
-    @Persisted var deadline: Date
+    @Persisted var deadline: Date?
     
     convenience init(toDoTitle: String, memo: String?, deadline: Date) {
        self.init()

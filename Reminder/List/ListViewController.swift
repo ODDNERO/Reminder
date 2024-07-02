@@ -49,7 +49,8 @@ extension ListViewController {
     }
     
     @objc private func addButtonClicked() { //임시
-        present(AddViewController(), animated: true)
+        let naviAddVC = UINavigationController(rootViewController: AddViewController())
+        present(naviAddVC, animated: true)
     }
     
     private func configurePullDownButton() -> UIMenu {
