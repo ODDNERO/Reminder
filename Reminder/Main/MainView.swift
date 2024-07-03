@@ -17,6 +17,22 @@ final class MainView: BaseView {
         return label
     }()
     
+    var listCollectionView = MainCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        let sectionSpacing: CGFloat = 15
+        let cellSpacing: CGFloat = 15
+        let cellCount: CGFloat = 2
+        let screenWidth = UIScreen.main.bounds.width
+        let width = (screenWidth - (sectionSpacing * 2) - (cellSpacing * 1)) / cellCount
+        
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: width, height: width * 0.48)
+        layout.minimumInteritemSpacing = 15
+        layout.minimumLineSpacing = 15
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        return layout
+    }
+    
     let addToDoButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
@@ -37,7 +53,7 @@ final class MainView: BaseView {
     }()
     
     override func configureHierarchy() {
-        [templateLabel, addToDoButton, addListButton].forEach {
+        [templateLabel, listCollectionView, addToDoButton, addListButton].forEach {
             self.addSubview($0)
         }
     }
@@ -47,6 +63,12 @@ final class MainView: BaseView {
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(4)
             $0.leading.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
+        listCollectionView.snp.makeConstraints {
+            $0.top.equalTo(templateLabel.snp.bottom)
+            $0.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            $0.bottom.equalTo(addToDoButton.snp.top)
+        }
+        
         addToDoButton.snp.makeConstraints {
             $0.leading.bottom.equalTo(self.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(50)
