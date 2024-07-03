@@ -10,10 +10,18 @@ import RealmSwift
 import Toast
 
 final class AddViewController: BaseViewController<AddView> {
-
+    private var deadline = ""
+    private var tag = ""
+    private var priority = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleNotification),
+                                               name: NSNotification.Name("toDoInfo"),
+                                               object: nil)
     }
     
     override func addEventHandler() {
@@ -25,6 +33,18 @@ final class AddViewController: BaseViewController<AddView> {
 }
 
 extension AddViewController {
+    @objc func handleNotification(_ notification: Notification) {
+        print("handleNotification 실행됨")
+        guard let userInfo = notification.userInfo else { return }
+        print("userInfo가 존재함")
+        if let newDeadline = userInfo["deadline"] {
+            print("전달된 마감일: \(newDeadline)")
+            deadline = newDeadline as! String
+            print("저장한 마감일: \(deadline)")
+//            rootView.deadlineSetView = DataAddView(columnText: newDeadline as! String) //실패한 시도
+        }
+    }
+    
     @objc private func deadlineClicked() {
         navigationController?.pushViewController(DeadlineViewController(), animated: true)
     }
@@ -60,9 +80,6 @@ extension AddViewController {
         guard checkRequiredFields() else { return }
         let title = rootView.titleTextField.text!
         let memo = rootView.memoTextField.text
-        let deadline = Date() //임시
-        let tag = ""
-        let priority = 0
         
         let realm = try! Realm()
         let data = Todo(toDoTitle: title, memo: memo, deadline: deadline, tag: tag, priority: priority)
