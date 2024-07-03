@@ -72,25 +72,27 @@ final class AddView: BaseView {
             $0.horizontalEdges.top.equalTo(self.safeAreaLayoutGuide).inset(15)
         }
         titleTextField.snp.makeConstraints {
-            $0.top.equalTo(textFieldStackView).offset(2)
-            $0.leading.equalTo(textFieldStackView).offset(12)
+            $0.top.equalToSuperview().offset(2)
+            $0.leading.equalToSuperview().offset(12)
             $0.height.equalTo(50)
         }
         dividerView.snp.makeConstraints {
             $0.top.equalTo(titleTextField.snp.bottom)
-            $0.horizontalEdges.equalTo(textFieldStackView).inset(8)
+            $0.horizontalEdges.equalToSuperview().inset(8)
             $0.height.equalTo(1)
         }
         memoTextField.snp.makeConstraints {
             $0.top.equalTo(dividerView.snp.bottom).offset(8)
-            $0.leading.equalTo(textFieldStackView).offset(12)
+            $0.leading.equalToSuperview().offset(12)
             $0.height.equalTo(120)
         }
         
-//        setViewStackView.snp.makeConstraints {
-//            $0.top.equalTo(textFieldStackView.snp.bottom).offset(15)
-//            $0.horizontalEdges.top.equalTo(self.safeAreaLayoutGuide).inset(15)
-//        }
+        setViewStackView.snp.makeConstraints {
+            $0.top.equalTo(textFieldStackView.snp.bottom).offset(15)
+            $0.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(15)
+            $0.height.equalToSuperview().multipliedBy(0.4)
+        }
+        
 //        deadlineSetView.snp.makeConstraints {
 ////            $0.top.equalTo(setViewStackView)
 ////            $0.horizontalEdges.equalTo(setViewStackView)
