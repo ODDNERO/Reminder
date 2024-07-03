@@ -36,10 +36,17 @@ extension AddViewController {
     
     @objc private func addButtonClicked() {
         guard checkRequiredFields() else { return }
+        let title = rootView.titleTextField.text!
+        let memo = rootView.memoTextField.text
+        let deadline = Date() //임시
+        let tag = ""
+        let priority = 0
+        
         let realm = try! Realm()
         let data = Todo(toDoTitle: rootView.titleTextField.text!, 
                         memo: rootView.memoTextField.text, 
                         deadline: Date()) //임시
+        let data = Todo(toDoTitle: title, memo: memo, deadline: deadline, tag: tag, priority: priority)
         try! realm.write { realm.add(data) }
         
         dismiss(animated: true, completion: nil)
