@@ -21,14 +21,8 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
-        
-    }
-    
-    func configureLayout() {
-        
-    }
-    
+    func configureHierarchy() {}
+    func configureLayout() {}
     func configureView() {
         self.backgroundColor = .white
     }

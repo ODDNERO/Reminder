@@ -29,6 +29,7 @@ final class DataAddView: UIView {
         super.init(frame: .zero)
         self.backgroundColor = .white
         self.layer.cornerRadius = 15
+        self.isUserInteractionEnabled = true
         columnLabel.text = columnText
         configureHierarchy()
         configureLayout()
@@ -53,8 +54,8 @@ extension DataAddView {
         }
         rightImageView.snp.makeConstraints {
             $0.centerY.equalTo(self)
-            $0.trailing.equalTo(self).offset(12)
-            $0.size.equalTo(10)
+            $0.trailing.equalTo(self).offset(-12)
+            $0.size.equalTo(20)
         }
     }
 }

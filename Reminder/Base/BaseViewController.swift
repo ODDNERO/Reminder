@@ -20,11 +20,6 @@ class BaseViewController<RootView: UIView>: UIViewController {
         settingDelegate()
     }
     
-    func addEventHandler() {
-        
-    }
-    
-    func settingDelegate() {
-        
-    }
+    func addEventHandler() {}
+    func settingDelegate() {}
 }
