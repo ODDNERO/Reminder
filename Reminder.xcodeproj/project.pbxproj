@@ -26,6 +26,7 @@
 		CE7902002C34A5CE00F8EAB6 /* DataAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FF2C34A5CE00F8EAB6 /* DataAddView.swift */; };
 		CE7902062C3590C800F8EAB6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902052C3590C800F8EAB6 /* MainViewController.swift */; };
 		CE7902082C3590DD00F8EAB6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902072C3590DD00F8EAB6 /* MainView.swift */; };
+		CE79020A2C359A5800F8EAB6 /* MainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902092C359A5800F8EAB6 /* MainCollectionView.swift */; };
 		CE79020C2C359A7300F8EAB6 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79020B2C359A7300F8EAB6 /* MainCollectionViewCell.swift */; };
 		CE79020E2C35B0CF00F8EAB6 /* MainListCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79020D2C35B0CF00F8EAB6 /* MainListCategory.swift */; };
 /* End PBXBuildFile section */
@@ -168,6 +169,7 @@
 			children = (
 				CE7902052C3590C800F8EAB6 /* MainViewController.swift */,
 				CE7902072C3590DD00F8EAB6 /* MainView.swift */,
+				CE7902092C359A5800F8EAB6 /* MainCollectionView.swift */,
 				CE79020B2C359A7300F8EAB6 /* MainCollectionViewCell.swift */,
 				CE79020D2C35B0CF00F8EAB6 /* MainListCategory.swift */,
 			);
@@ -256,6 +258,7 @@
 			files = (
 				CE7901F32C3406B200F8EAB6 /* AddView.swift in Sources */,
 				CE7902082C3590DD00F8EAB6 /* MainView.swift in Sources */,
+				CE79020A2C359A5800F8EAB6 /* MainCollectionView.swift in Sources */,
 				CE79020E2C35B0CF00F8EAB6 /* MainListCategory.swift in Sources */,
 				CE79020C2C359A7300F8EAB6 /* MainCollectionViewCell.swift in Sources */,
 				CE7902062C3590C800F8EAB6 /* MainViewController.swift in Sources */,
