@@ -14,9 +14,9 @@ class Todo: Object {
     @Persisted var memo: String?
     @Persisted var deadline: String?
     @Persisted var tag: String?
-    @Persisted var priority: Int?
+    @Persisted var priority: String?
     
-    convenience init(toDoTitle: String, memo: String?, deadline: String, tag: String, priority: Int) {
+    convenience init(toDoTitle: String, memo: String?, deadline: String, tag: String, priority: String) {
         self.init()
         self.toDoTitle = toDoTitle
         self.memo = memo

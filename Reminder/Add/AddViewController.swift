@@ -12,7 +12,7 @@ import Toast
 final class AddViewController: BaseViewController<AddView> {
     private var deadline = ""
     private var tag = ""
-    private var priority = 0
+    private var priority = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
