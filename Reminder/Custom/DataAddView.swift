@@ -20,7 +20,7 @@ final class DataAddView: UIView {
     private let rightImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "chevron.right")
-        imageView.tintColor = .systemIndigo
+        imageView.tintColor = .systemCyan
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

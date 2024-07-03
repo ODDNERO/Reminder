@@ -92,12 +92,6 @@ final class AddView: BaseView {
             $0.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(15)
             $0.height.equalToSuperview().multipliedBy(0.4)
         }
-        
-//        deadlineSetView.snp.makeConstraints {
-////            $0.top.equalTo(setViewStackView)
-////            $0.horizontalEdges.equalTo(setViewStackView)
-//            $0.height.equalTo(55)
-//        }
     }
     
     override func configureView() {

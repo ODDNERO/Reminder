@@ -12,7 +12,7 @@ final class MainView: BaseView {
     private let templateLabel = {
         let label = UILabel()
         label.text = "전체" //임시
-        label.textColor = .systemGray3
+        label.textColor = .systemGray
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
     }()
@@ -26,7 +26,7 @@ final class MainView: BaseView {
         let width = (screenWidth - (sectionSpacing * 2) - (cellSpacing * 1)) / cellCount
         
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: width, height: width * 0.48)
+        layout.itemSize = CGSize(width: width, height: width * 0.5)
         layout.minimumInteritemSpacing = 15
         layout.minimumLineSpacing = 15
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
@@ -88,3 +88,27 @@ final class MainView: BaseView {
     }
 }
 
+extension MainView {
+    
+}
+
+//
+//import SwiftUI
+//
+//struct ViewControllerRepresentable: UIViewControllerRepresentable {
+//    typealias UIViewControllerType = MainViewController
+//    
+//    func makeUIViewController(context: Context) -> UIViewControllerType {
+//        return UIViewControllerType()
+//    }
+//    
+//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+//    }
+//}
+//
+//@available(iOS 13.0.0, *)
+//struct ViewPreview: PreviewProvider {
+//    static var previews: some View {
+//        ViewControllerRepresentable()
+//    }
+//}
