@@ -38,21 +38,12 @@ final class ListViewController: BaseViewController<ListView> {
 
 extension ListViewController {
     private func settingNavigationBar() {
-        let addButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addButtonClicked))
-        addButton.tintColor = .systemBlue
-        navigationItem.leftBarButtonItem = addButton //임시
-        
         let menu = configurePullDownButton()
         let menuButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "ellipsis.circle"), target: nil, action: nil, menu: menu)
         menuButton.tintColor = .systemBlue
         navigationItem.rightBarButtonItem = menuButton
     }
-    
-    @objc private func addButtonClicked() { //임시
-        let naviAddVC = UINavigationController(rootViewController: AddViewController())
-        present(naviAddVC, animated: true)
-    }
-    
+
     private func configurePullDownButton() -> UIMenu {
         let byDeadlineAction = UIAction(title: "마감일 순으로 보기") { _ in
             self.list = self.list.sorted(byKeyPath: "deadline", ascending: true)
