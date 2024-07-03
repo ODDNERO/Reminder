@@ -40,10 +40,10 @@ final class AddView: BaseView {
         return stackView
     }()
     
-    let deadlineSetView = DataAddView(columnText: "마감일")
-    let tagSetView = DataAddView(columnText: "태그")
-    let prioritySetView = DataAddView(columnText: "우선 순위")
-    let imageAddView = DataAddView(columnText: "이미지 추가")
+    var deadlineSetView = DataAddView(columnText: "마감일")
+    var tagSetView = DataAddView(columnText: "태그")
+    var prioritySetView = DataAddView(columnText: "우선 순위")
+    var imageAddView = DataAddView(columnText: "이미지 추가")
     private let setViewStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
