@@ -24,6 +24,8 @@
 		CE7901FA2C34224400F8EAB6 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */; };
 		CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FC2C342A1800F8EAB6 /* Todo.swift */; };
 		CE7902002C34A5CE00F8EAB6 /* DataAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FF2C34A5CE00F8EAB6 /* DataAddView.swift */; };
+		CE7902062C3590C800F8EAB6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902052C3590C800F8EAB6 /* MainViewController.swift */; };
+		CE7902082C3590DD00F8EAB6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902072C3590DD00F8EAB6 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
 		CE7901FC2C342A1800F8EAB6 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		CE7901FF2C34A5CE00F8EAB6 /* DataAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAddView.swift; sourceTree = "<group>"; };
+		CE7902052C3590C800F8EAB6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE7902072C3590DD00F8EAB6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CE7902092C359A5800F8EAB6 /* MainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 				CE7901F82C34222D00F8EAB6 /* Extension */,
 				CE7901FE2C34A3D300F8EAB6 /* Custom */,
 				CE7901DD2C33FDCD00F8EAB6 /* Base */,
+				CE7902042C35908A00F8EAB6 /* Main */,
 				CE7901E02C3401EE00F8EAB6 /* List */,
 				CE7901E12C34020200F8EAB6 /* Add */,
 				CE7901D12C33F78800F8EAB6 /* Assets.xcassets */,
@@ -151,6 +157,15 @@
 				CE7901FF2C34A5CE00F8EAB6 /* DataAddView.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		CE7902042C35908A00F8EAB6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE7902052C3590C800F8EAB6 /* MainViewController.swift */,
+				CE7902072C3590DD00F8EAB6 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7901F32C3406B200F8EAB6 /* AddView.swift in Sources */,
+				CE7902082C3590DD00F8EAB6 /* MainView.swift in Sources */,
+				CE7902062C3590C800F8EAB6 /* MainViewController.swift in Sources */,
 				CE7901CD2C33F78600F8EAB6 /* BaseViewController.swift in Sources */,
 				CE7902002C34A5CE00F8EAB6 /* DataAddView.swift in Sources */,
 				CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */,
