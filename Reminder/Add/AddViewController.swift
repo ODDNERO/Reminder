@@ -47,6 +47,10 @@ extension AddViewController {
             tag = newTag as! String
             rootView.tagSetView.columnLabel.text = "#\(tag)"
         }
+        
+        if let newPriority = userInfo["priority"] {
+            priority = newPriority as! String
+            rootView.prioritySetView.columnLabel.text = priority
         }
     }
     
