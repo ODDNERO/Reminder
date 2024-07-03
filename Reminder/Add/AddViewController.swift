@@ -42,6 +42,7 @@ extension AddViewController {
             deadline = newDeadline as! String
             print("저장한 마감일: \(deadline)")
 //            rootView.deadlineSetView = DataAddView(columnText: newDeadline as! String) //실패한 시도
+            rootView.deadlineSetView.columnLabel.text = deadline //성공!
         }
     }
     

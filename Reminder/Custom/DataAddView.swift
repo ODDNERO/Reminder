@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class DataAddView: UIView {
-    private var columnLabel = {
+    var columnLabel = {
         let label = UILabel()
         label.textColor = .black
         label.contentMode = .left
