@@ -37,12 +37,16 @@ extension AddViewController {
         print("handleNotification 실행됨")
         guard let userInfo = notification.userInfo else { return }
         print("userInfo가 존재함")
+        
         if let newDeadline = userInfo["deadline"] {
-            print("전달된 마감일: \(newDeadline)")
             deadline = newDeadline as! String
-            print("저장한 마감일: \(deadline)")
-//            rootView.deadlineSetView = DataAddView(columnText: newDeadline as! String) //실패한 시도
-            rootView.deadlineSetView.columnLabel.text = deadline //성공!
+            rootView.deadlineSetView.columnLabel.text = deadline
+        }
+        
+        if let newTag = userInfo["tag"] {
+            tag = newTag as! String
+            rootView.tagSetView.columnLabel.text = "#\(tag)"
+        }
         }
     }
     
