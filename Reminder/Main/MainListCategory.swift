@@ -25,7 +25,7 @@ enum MainListCategory: CaseIterable {
         case .Flag:
             return (symbolImage: UIImage(systemName: "flag.fill"), color: .systemYellow, title: "깃발 표시")
         case .Done:
-            return (symbolImage: UIImage(systemName: "checkmark"), color: .systemGray, title: "완료됨")
+            return (symbolImage: UIImage(systemName: "checkmark"), color: .systemGreen, title: "완료됨")
         }
     }
 }

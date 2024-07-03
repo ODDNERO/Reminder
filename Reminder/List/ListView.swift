@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class ListView: BaseView {
-    private let categoryLabel = {
+    let categoryLabel = {
         let label = UILabel()
         label.text = "전체" //임시
         label.textColor = .systemBlue //임시

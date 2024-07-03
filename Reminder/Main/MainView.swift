@@ -47,8 +47,11 @@ final class MainView: BaseView {
     }()
     let addListButton = {
         let button = UIButton()
-        button.setTitle("목록 추가", for: .normal)
-        button.tintColor = .systemBlue
+        var configuration = UIButton.Configuration.plain()
+        configuration.title = "목록 추가"
+        configuration.titleAlignment = .trailing
+        configuration.baseForegroundColor = .systemBlue
+        button.configuration = configuration
         return button
     }()
     
@@ -70,13 +73,14 @@ final class MainView: BaseView {
         }
         
         addToDoButton.snp.makeConstraints {
-            $0.leading.bottom.equalTo(self.safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(50)
+            $0.leading.bottom.equalTo(self.safeAreaLayoutGuide).inset(10)
+            $0.height.equalTo(30)
         }
         addListButton.snp.makeConstraints {
-            $0.trailing.bottom.equalTo(self.safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(50)
+            $0.trailing.bottom.equalTo(self.safeAreaLayoutGuide).inset(10)
+            $0.height.equalTo(30)
         }
+        
     }
     
     override func configureView() {
