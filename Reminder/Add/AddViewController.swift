@@ -15,6 +15,28 @@ final class AddViewController: BaseViewController<AddView> {
         super.viewDidLoad()
         settingNavigationBar()
     }
+    
+    override func addEventHandler() {
+        rootView.deadlineSetView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deadlineClicked)))
+        rootView.tagSetView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tagClicked)))
+        rootView.prioritySetView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(priorityClicked)))
+        rootView.imageAddView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageAddClicked)))
+    }
+}
+
+extension AddViewController {
+    @objc private func deadlineClicked() {
+        navigationController?.pushViewController(DeadlineViewController(), animated: true)
+    }
+    @objc private func tagClicked() {
+        navigationController?.pushViewController(TagViewController(), animated: true)
+    }
+    @objc private func priorityClicked() {
+        navigationController?.pushViewController(PriorityViewController(), animated: true)
+    }
+    @objc private func imageAddClicked() {
+        navigationController?.pushViewController(ImageAddViewController(), animated: true)
+    }
 }
 
 extension AddViewController {
@@ -43,17 +65,11 @@ extension AddViewController {
         let priority = 0
         
         let realm = try! Realm()
-        let data = Todo(toDoTitle: rootView.titleTextField.text!, 
-                        memo: rootView.memoTextField.text, 
-                        deadline: Date()) //임시
         let data = Todo(toDoTitle: title, memo: memo, deadline: deadline, tag: tag, priority: priority)
         try! realm.write { realm.add(data) }
-        
         dismiss(animated: true, completion: nil)
     }
-}
-
-extension AddViewController {
+    
     private func checkRequiredFields() -> Bool {
         guard let title = rootView.titleTextField.text, !title.isEmpty else {
             rootView.makeToast("제목을 입력해 주세요!", duration: 1, position: .center)

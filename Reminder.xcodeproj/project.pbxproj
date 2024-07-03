@@ -30,6 +30,14 @@
 		CE79020C2C359A7300F8EAB6 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79020B2C359A7300F8EAB6 /* MainCollectionViewCell.swift */; };
 		CE79020E2C35B0CF00F8EAB6 /* MainListCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79020D2C35B0CF00F8EAB6 /* MainListCategory.swift */; };
 		CE79020F2C35CD5C00F8EAB6 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CE7901ED2C34038700F8EAB6 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CE7902162C35DE8600F8EAB6 /* DeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902152C35DE8600F8EAB6 /* DeadlineViewController.swift */; };
+		CE7902182C35DEAB00F8EAB6 /* DeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902172C35DEAA00F8EAB6 /* DeadlineView.swift */; };
+		CE79021A2C35DEC300F8EAB6 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902192C35DEC300F8EAB6 /* TagViewController.swift */; };
+		CE79021C2C35DECF00F8EAB6 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79021B2C35DECF00F8EAB6 /* TagView.swift */; };
+		CE79021E2C35DEE400F8EAB6 /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79021D2C35DEE400F8EAB6 /* PriorityViewController.swift */; };
+		CE7902202C35DEF200F8EAB6 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79021F2C35DEF200F8EAB6 /* PriorityView.swift */; };
+		CE7902222C35DF5A00F8EAB6 /* ImageAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902212C35DF5A00F8EAB6 /* ImageAddViewController.swift */; };
+		CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902232C35DF6C00F8EAB6 /* ImageAddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +76,14 @@
 		CE7902092C359A5800F8EAB6 /* MainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
 		CE79020B2C359A7300F8EAB6 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE79020D2C35B0CF00F8EAB6 /* MainListCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCategory.swift; sourceTree = "<group>"; };
+		CE7902152C35DE8600F8EAB6 /* DeadlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineViewController.swift; sourceTree = "<group>"; };
+		CE7902172C35DEAA00F8EAB6 /* DeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineView.swift; sourceTree = "<group>"; };
+		CE7902192C35DEC300F8EAB6 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		CE79021B2C35DECF00F8EAB6 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		CE79021D2C35DEE400F8EAB6 /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
+		CE79021F2C35DEF200F8EAB6 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
+		CE7902212C35DF5A00F8EAB6 /* ImageAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddViewController.swift; sourceTree = "<group>"; };
+		CE7902232C35DF6C00F8EAB6 /* ImageAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +167,10 @@
 			children = (
 				CE7901F42C3406C000F8EAB6 /* AddViewController.swift */,
 				CE7901F22C3406B200F8EAB6 /* AddView.swift */,
+				CE7902112C35DE0900F8EAB6 /* Deadline */,
+				CE7902122C35DE2B00F8EAB6 /* Tag */,
+				CE7902132C35DE2F00F8EAB6 /* Priority */,
+				CE7902142C35DE3C00F8EAB6 /* Image */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -189,6 +209,42 @@
 				CE79020D2C35B0CF00F8EAB6 /* MainListCategory.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		CE7902112C35DE0900F8EAB6 /* Deadline */ = {
+			isa = PBXGroup;
+			children = (
+				CE7902152C35DE8600F8EAB6 /* DeadlineViewController.swift */,
+				CE7902172C35DEAA00F8EAB6 /* DeadlineView.swift */,
+			);
+			path = Deadline;
+			sourceTree = "<group>";
+		};
+		CE7902122C35DE2B00F8EAB6 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				CE7902192C35DEC300F8EAB6 /* TagViewController.swift */,
+				CE79021B2C35DECF00F8EAB6 /* TagView.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		CE7902132C35DE2F00F8EAB6 /* Priority */ = {
+			isa = PBXGroup;
+			children = (
+				CE79021D2C35DEE400F8EAB6 /* PriorityViewController.swift */,
+				CE79021F2C35DEF200F8EAB6 /* PriorityView.swift */,
+			);
+			path = Priority;
+			sourceTree = "<group>";
+		};
+		CE7902142C35DE3C00F8EAB6 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				CE7902212C35DF5A00F8EAB6 /* ImageAddViewController.swift */,
+				CE7902232C35DF6C00F8EAB6 /* ImageAddView.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,21 +328,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE79021E2C35DEE400F8EAB6 /* PriorityViewController.swift in Sources */,
 				CE7901F32C3406B200F8EAB6 /* AddView.swift in Sources */,
+				CE7902222C35DF5A00F8EAB6 /* ImageAddViewController.swift in Sources */,
+				CE7902202C35DEF200F8EAB6 /* PriorityView.swift in Sources */,
 				CE7902082C3590DD00F8EAB6 /* MainView.swift in Sources */,
 				CE79020A2C359A5800F8EAB6 /* MainCollectionView.swift in Sources */,
 				CE79020E2C35B0CF00F8EAB6 /* MainListCategory.swift in Sources */,
+				CE7902162C35DE8600F8EAB6 /* DeadlineViewController.swift in Sources */,
 				CE79020C2C359A7300F8EAB6 /* MainCollectionViewCell.swift in Sources */,
+				CE7902182C35DEAB00F8EAB6 /* DeadlineView.swift in Sources */,
 				CE7902062C3590C800F8EAB6 /* MainViewController.swift in Sources */,
 				CE7901CD2C33F78600F8EAB6 /* BaseViewController.swift in Sources */,
 				CE7902002C34A5CE00F8EAB6 /* DataAddView.swift in Sources */,
 				CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */,
+				CE79021C2C35DECF00F8EAB6 /* TagView.swift in Sources */,
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
+				CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */,
 				CE7901F72C34220C00F8EAB6 /* ListTableViewCell.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
 				CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */,
 				CE7901E32C34023900F8EAB6 /* ListViewController.swift in Sources */,
+				CE79021A2C35DEC300F8EAB6 /* TagViewController.swift in Sources */,
 				CE7901FA2C34224400F8EAB6 /* IdentifierProtocol.swift in Sources */,
 				CE7901DF2C34003700F8EAB6 /* BaseView.swift in Sources */,
 			);
