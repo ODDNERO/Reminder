@@ -8,25 +8,22 @@
 import UIKit
 import RealmSwift
 
-protocol SendDataDelegate {
-    func sendTodoList(data: Results<Todo>)
+protocol ReloadListDelegate {
+    func reloadList()
 }
 
 class MainViewController: BaseViewController<MainView> {
-    var delegate: SendDataDelegate?
-    
-    let realm = try! Realm()
-    private var list: Results<Todo>? {
+    private let repository = ToDoRepository()
+    private var list: Results<ToDo>? {
         didSet {
             rootView.listCollectionView.reloadData()
-            self.delegate?.sendTodoList(data: list!)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
-        list = realm.objects(Todo.self)
+        list = repository.readAllItem()
     }
     
     override func settingDelegate() {
@@ -39,7 +36,9 @@ class MainViewController: BaseViewController<MainView> {
         rootView.addToDoButton.addTarget(self, action: #selector(addToDoButtonClicked), for: .touchUpInside)
     }
     @objc private func addToDoButtonClicked() {
-        let naviAddVC = UINavigationController(rootViewController: AddViewController())
+        let addVC = AddViewController()
+        let naviAddVC = UINavigationController(rootViewController: addVC)
+        addVC.delegate = self
         present(naviAddVC, animated: true)
     }
 }
@@ -58,6 +57,12 @@ extension MainViewController {
         let action2 = UIAction(title: "템플릿") { _ in //임시
         }
         return UIMenu(children: [action1, action2])
+    }
+}
+
+extension MainViewController: ReloadListDelegate {
+    func reloadList() {
+        list = repository.readAllItem()
     }
 }
 

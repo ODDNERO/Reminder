@@ -14,6 +14,9 @@ final class AddViewController: BaseViewController<AddView> {
     private var tag = ""
     private var priority = ""
     
+    var delegate: ReloadListDelegate?
+    let repository = ToDoRepository()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
@@ -90,9 +93,9 @@ extension AddViewController {
         let title = rootView.titleTextField.text!
         let memo = rootView.memoTextField.text
         
-        let realm = try! Realm()
-        let data = Todo(toDoTitle: title, memo: memo, deadline: deadline, tag: tag, priority: priority)
-        try! realm.write { realm.add(data) }
+        let data = ToDo(toDoTitle: title, memo: memo, deadline: deadline, tag: tag, priority: priority)
+        repository.createItem(data)
+        delegate?.reloadList()
         dismiss(animated: true, completion: nil)
     }
     
