@@ -51,7 +51,7 @@ final class ListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(data: Todo) {
+    func update(data: ToDo) {
         titleLabel.text = data.toDoTitle
         memoLabel.text = data.memo
         deadlineLabel.text = data.deadline

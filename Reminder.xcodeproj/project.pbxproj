@@ -22,7 +22,7 @@
 		CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F42C3406C000F8EAB6 /* AddViewController.swift */; };
 		CE7901F72C34220C00F8EAB6 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F62C34220C00F8EAB6 /* ListTableViewCell.swift */; };
 		CE7901FA2C34224400F8EAB6 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */; };
-		CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FC2C342A1800F8EAB6 /* Todo.swift */; };
+		CE7901FD2C342A1800F8EAB6 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FC2C342A1800F8EAB6 /* ToDo.swift */; };
 		CE7902002C34A5CE00F8EAB6 /* DataAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7901FF2C34A5CE00F8EAB6 /* DataAddView.swift */; };
 		CE7902062C3590C800F8EAB6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902052C3590C800F8EAB6 /* MainViewController.swift */; };
 		CE7902082C3590DD00F8EAB6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902072C3590DD00F8EAB6 /* MainView.swift */; };
@@ -40,6 +40,7 @@
 		CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902232C35DF6C00F8EAB6 /* ImageAddView.swift */; };
 		CE7902272C36208900F8EAB6 /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902262C36208900F8EAB6 /* ToDoDetailViewController.swift */; };
 		CE7902292C36209F00F8EAB6 /* ToDoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902282C36209F00F8EAB6 /* ToDoDetailView.swift */; };
+		CE79022F2C36675B00F8EAB6 /* ToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79022E2C36675A00F8EAB6 /* ToDoRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +72,7 @@
 		CE7901F42C3406C000F8EAB6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CE7901F62C34220C00F8EAB6 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		CE7901F92C34224400F8EAB6 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
-		CE7901FC2C342A1800F8EAB6 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		CE7901FC2C342A1800F8EAB6 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		CE7901FF2C34A5CE00F8EAB6 /* DataAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAddView.swift; sourceTree = "<group>"; };
 		CE7902052C3590C800F8EAB6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE7902072C3590DD00F8EAB6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		CE7902232C35DF6C00F8EAB6 /* ImageAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddView.swift; sourceTree = "<group>"; };
 		CE7902262C36208900F8EAB6 /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
 		CE7902282C36209F00F8EAB6 /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
+		CE79022E2C36675A00F8EAB6 /* ToDoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +193,8 @@
 		CE7901FB2C34298F00F8EAB6 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				CE7901FC2C342A1800F8EAB6 /* Todo.swift */,
+				CE7901FC2C342A1800F8EAB6 /* ToDo.swift */,
+				CE79022E2C36675A00F8EAB6 /* ToDoRepository.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -359,12 +362,13 @@
 				CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */,
 				CE79021C2C35DECF00F8EAB6 /* TagView.swift in Sources */,
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
+				CE79022F2C36675B00F8EAB6 /* ToDoRepository.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
 				CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */,
 				CE7902292C36209F00F8EAB6 /* ToDoDetailView.swift in Sources */,
 				CE7901F72C34220C00F8EAB6 /* ListTableViewCell.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
-				CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */,
+				CE7901FD2C342A1800F8EAB6 /* ToDo.swift in Sources */,
 				CE7901E32C34023900F8EAB6 /* ListViewController.swift in Sources */,
 				CE79021A2C35DEC300F8EAB6 /* TagViewController.swift in Sources */,
 				CE7901FA2C34224400F8EAB6 /* IdentifierProtocol.swift in Sources */,
