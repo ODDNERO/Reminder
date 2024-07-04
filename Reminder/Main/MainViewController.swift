@@ -6,12 +6,27 @@
 //
 
 import UIKit
+import RealmSwift
+
+protocol SendDataDelegate {
+    func sendTodoList(data: Results<Todo>)
+}
 
 class MainViewController: BaseViewController<MainView> {
-
+    var delegate: SendDataDelegate?
+    
+    let realm = try! Realm()
+    private var list: Results<Todo>? {
+        didSet {
+            rootView.listCollectionView.reloadData()
+            self.delegate?.sendTodoList(data: list!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
+        list = realm.objects(Todo.self)
     }
     
     override func settingDelegate() {
