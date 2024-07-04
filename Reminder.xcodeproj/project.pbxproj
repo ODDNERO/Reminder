@@ -38,6 +38,8 @@
 		CE7902202C35DEF200F8EAB6 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79021F2C35DEF200F8EAB6 /* PriorityView.swift */; };
 		CE7902222C35DF5A00F8EAB6 /* ImageAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902212C35DF5A00F8EAB6 /* ImageAddViewController.swift */; };
 		CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902232C35DF6C00F8EAB6 /* ImageAddView.swift */; };
+		CE7902272C36208900F8EAB6 /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902262C36208900F8EAB6 /* ToDoDetailViewController.swift */; };
+		CE7902292C36209F00F8EAB6 /* ToDoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902282C36209F00F8EAB6 /* ToDoDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +86,8 @@
 		CE79021F2C35DEF200F8EAB6 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
 		CE7902212C35DF5A00F8EAB6 /* ImageAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddViewController.swift; sourceTree = "<group>"; };
 		CE7902232C35DF6C00F8EAB6 /* ImageAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddView.swift; sourceTree = "<group>"; };
+		CE7902262C36208900F8EAB6 /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
+		CE7902282C36209F00F8EAB6 /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				CE7901E22C34023900F8EAB6 /* ListViewController.swift */,
 				CE7901E42C34025500F8EAB6 /* ListView.swift */,
 				CE7901F62C34220C00F8EAB6 /* ListTableViewCell.swift */,
+				CE7902252C36205A00F8EAB6 /* ToDoDetail */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -247,6 +252,15 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		CE7902252C36205A00F8EAB6 /* ToDoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE7902262C36208900F8EAB6 /* ToDoDetailViewController.swift */,
+				CE7902282C36209F00F8EAB6 /* ToDoDetailView.swift */,
+			);
+			path = ToDoDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +347,7 @@
 				CE7902222C35DF5A00F8EAB6 /* ImageAddViewController.swift in Sources */,
 				CE7902202C35DEF200F8EAB6 /* PriorityView.swift in Sources */,
 				CE7902082C3590DD00F8EAB6 /* MainView.swift in Sources */,
+				CE7902272C36208900F8EAB6 /* ToDoDetailViewController.swift in Sources */,
 				CE79020A2C359A5800F8EAB6 /* MainCollectionView.swift in Sources */,
 				CE79020E2C35B0CF00F8EAB6 /* MainListCategory.swift in Sources */,
 				CE7902162C35DE8600F8EAB6 /* DeadlineViewController.swift in Sources */,
@@ -346,6 +361,7 @@
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
 				CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */,
+				CE7902292C36209F00F8EAB6 /* ToDoDetailView.swift in Sources */,
 				CE7901F72C34220C00F8EAB6 /* ListTableViewCell.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
 				CE7901FD2C342A1800F8EAB6 /* Todo.swift in Sources */,

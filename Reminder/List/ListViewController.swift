@@ -8,18 +8,22 @@
 import UIKit
 import RealmSwift
 
-final class ListViewController: BaseViewController<ListView> {
+final class ListViewController: BaseViewController<ListView>, SendDataDelegate {
     let realm = try! Realm()
-    private var list: Results<Todo>! {
+    private var list: Results<Todo>? {
         didSet {
             rootView.listTableView.reloadData()
         }
     }
     
+    var delegate: SendDataDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
-        list = realm.objects(Todo.self).sorted(byKeyPath: "deadline", ascending: true)
+        let mainVC = MainViewController()
+        mainVC.delegate = self
+        list = list?.sorted(byKeyPath: "deadline", ascending: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +38,10 @@ final class ListViewController: BaseViewController<ListView> {
         rootView.listTableView.dataSource = self
         rootView.listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
     }
+    
+    func sendTodoList(data: RealmSwift.Results<Todo>) {
+        list = data
+    }
 }
 
 extension ListViewController {
@@ -46,10 +54,10 @@ extension ListViewController {
 
     private func configurePullDownButton() -> UIMenu {
         let byDeadlineAction = UIAction(title: "마감일 순으로 보기") { _ in
-            self.list = self.list.sorted(byKeyPath: "deadline", ascending: true)
+            self.list = self.list?.sorted(byKeyPath: "deadline", ascending: true)
         }
         let bytitleAction = UIAction(title: "제목 순으로 보기") { _ in
-            self.list = self.list.sorted(byKeyPath: "toDoTitle", ascending: true)
+            self.list = self.list?.sorted(byKeyPath: "toDoTitle", ascending: true)
         }
         return UIMenu(children: [byDeadlineAction, bytitleAction])
     }
@@ -57,12 +65,12 @@ extension ListViewController {
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return list?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier) as! ListTableViewCell
-        let data = list[indexPath.row]
+        let data = list![indexPath.row]
         cell.update(data: data)
         return cell
     }
@@ -70,7 +78,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "삭제") { action, view, completionHandler in
             try! self.realm.write {
-                self.realm.delete(self.list[indexPath.row])
+                self.realm.delete(self.list![indexPath.row])
             }
             self.rootView.listTableView.reloadData()
         }
