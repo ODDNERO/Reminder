@@ -8,28 +8,17 @@
 import UIKit
 import RealmSwift
 
-final class ListViewController: BaseViewController<ListView>, SendDataDelegate {
-    let realm = try! Realm()
-    private var list: Results<Todo>? {
-        didSet {
-            rootView.listTableView.reloadData()
-        }
-    }
+final class ListViewController: BaseViewController<ListView> {
     
-    var delegate: SendDataDelegate?
+    var delegate: ReloadListDelegate?
+    let repository = ToDoRepository()
     
+    private var list: Results<ToDo>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
-        let mainVC = MainViewController()
-        mainVC.delegate = self
-        list = list?.sorted(byKeyPath: "deadline", ascending: true)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        let realm = try! Realm()
-//        print(realm.configuration.fileURL)
+        list = repository.readAllItem()
         rootView.listTableView.reloadData()
     }
     
@@ -37,10 +26,6 @@ final class ListViewController: BaseViewController<ListView>, SendDataDelegate {
         rootView.listTableView.delegate = self
         rootView.listTableView.dataSource = self
         rootView.listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
-    }
-    
-    func sendTodoList(data: RealmSwift.Results<Todo>) {
-        list = data
     }
 }
 
@@ -77,11 +62,16 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "삭제") { action, view, completionHandler in
-            try! self.realm.write {
-                self.realm.delete(self.list![indexPath.row])
-            }
+            self.repository.deleteItem(self.list![indexPath.row])
             self.rootView.listTableView.reloadData()
+            self.delegate?.reloadList()
         }
         return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let toDoDetailVC = ToDoDetailViewController()
+        toDoDetailVC.todoData = list?[indexPath.row]
+        navigationController?.pushViewController(ToDoDetailViewController(), animated: true)
     }
 }
