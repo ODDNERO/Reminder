@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol ldentifierProtocol: AnyObject {
+protocol IdentifierProtocol: AnyObject {
     static var identifier: String { get }
 }
 
-extension UIView: ldentifierProtocol {
+extension UIView: IdentifierProtocol {
     static var identifier: String {
         return String(describing: self)
     }
