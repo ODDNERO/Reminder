@@ -76,7 +76,23 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             self.rootView.listTableView.reloadData()
             self.delegate?.reloadList()
         }
-        return UISwipeActionsConfiguration(actions: [delete])
+        let flag = UIContextualAction(style: .normal, title: "깃발") { action, view, completionHandler in
+            try! self.repository.realm.write {
+                self.list![indexPath.row].isFlag.toggle()
+            }
+            self.rootView.listTableView.reloadData()
+            self.delegate?.reloadList()
+            self.list = self.repository.readAllItem()
+        }
+        
+        switch list![indexPath.row].isFlag {
+        case true:
+            flag.image = UIImage(systemName: "flag.fill")
+        case false:
+            flag.image = UIImage(systemName: "flag")
+        }
+        flag.backgroundColor = .systemYellow
+        return UISwipeActionsConfiguration(actions: [delete, flag])
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

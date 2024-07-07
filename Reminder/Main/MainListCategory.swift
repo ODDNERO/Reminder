@@ -7,12 +7,12 @@
 
 import UIKit
 
-enum MainListCategory: CaseIterable {
-    case Today
-    case Schedule
-    case Total
-    case Flag
-    case Done
+enum MainListCategory: Int, CaseIterable {
+    case Today = 0
+    case Schedule = 1
+    case Total = 2
+    case Flag = 3
+    case Done = 4
     
     var attribute: (symbolImage: UIImage?, color: UIColor, title: String) {
         switch self {

@@ -58,6 +58,18 @@ extension MainViewController {
         }
         return UIMenu(children: [action1, action2])
     }
+    
+    private func reloadFlagCount() {
+        let flagCount = repository.readAllItem().filter("isFlag == true").count
+        rootView.listCollectionView.reloadData()
+        
+        let indexPath = IndexPath(item: MainListCategory.Flag.rawValue, section: 0)
+        if let cell = rootView.listCollectionView.cellForItem(at: indexPath) as? MainCollectionViewCell {
+            cell.update(category: .Flag, count: flagCount)
+        } else {
+            rootView.listCollectionView.reloadData()
+        }
+    }
 }
 
 extension MainViewController: ReloadListDelegate {
@@ -97,3 +109,4 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
