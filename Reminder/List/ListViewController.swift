@@ -9,11 +9,14 @@ import UIKit
 import RealmSwift
 
 final class ListViewController: BaseViewController<ListView> {
-    
     var delegate: ReloadListDelegate?
     let repository = ToDoRepository()
     
-    private var list: Results<ToDo>?
+    private var list: Results<ToDo>? {
+        didSet {
+            rootView.listTableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,14 @@ final class ListViewController: BaseViewController<ListView> {
         rootView.listTableView.delegate = self
         rootView.listTableView.dataSource = self
         rootView.listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
+        rootView.searchBar.delegate = self
+    }
+}
+
+extension ListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchText = rootView.searchBar.text  else { return }
+        list = repository.filterSearchTitleItem(searchText)
     }
 }
 
@@ -36,7 +47,6 @@ extension ListViewController {
         menuButton.tintColor = .systemBlue
         navigationItem.rightBarButtonItem = menuButton
     }
-
     private func configurePullDownButton() -> UIMenu {
         let byDeadlineAction = UIAction(title: "마감일 순으로 보기") { _ in
             self.list = self.list?.sorted(byKeyPath: "deadline", ascending: true)

@@ -16,10 +16,11 @@ final class ListView: BaseView {
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
     }()
+    let searchBar = UISearchBar()
     let listTableView = UITableView()
     
     override func configureHierarchy() {
-        [categoryLabel, listTableView].forEach {
+        [categoryLabel, searchBar, listTableView].forEach {
             self.addSubview($0)
         }
     }
@@ -29,12 +30,16 @@ final class ListView: BaseView {
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(4)
             $0.leading.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
-        listTableView.snp.makeConstraints {
+        searchBar.snp.makeConstraints {
             $0.top.equalTo(categoryLabel.snp.bottom).offset(10)
+            $0.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(10)
+            $0.height.equalTo(40)
+        }
+        listTableView.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom).offset(10)
             $0.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
             $0.bottom.equalTo(self)
         }
-//        listTableView.backgroundColor = .blue //임시
     }
     
     override func configureView() {
