@@ -51,7 +51,7 @@ final class ToDoRepository {
         }
     }
     
-    func filterSearchTitleItem(column: String, searchText: String) -> Results<ToDo> {
+    func filterSearchTitleItem(_ searchText: String) -> Results<ToDo> {
         let filter = realm.objects(ToDo.self).where {
             $0.toDoTitle.contains(searchText)
         }
