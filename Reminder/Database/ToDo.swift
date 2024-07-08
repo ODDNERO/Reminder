@@ -11,9 +11,12 @@ import RealmSwift
 class Folder: Object {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var title: String
-    @Persisted var subtitle: String
-    @Persisted var addDate: Date
-    @Persisted var list: List<ToDo>
+    @Persisted var list = List<ToDo>()
+    
+    convenience init(title: String) {
+        self.init()
+        self.title = title
+    }
 }
 
 class ToDo: Object {

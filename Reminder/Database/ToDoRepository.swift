@@ -9,11 +9,18 @@ import Foundation
 import RealmSwift
 
 final class ToDoRepository {
+    let realm = try! Realm()
+    private var folders: Results<Folder>
+    
     init() {
         print(realm.configuration.fileURL)
+        folders = realm.objects(Folder.self)
+        if folders.isEmpty {
+            MainListCategory.allCases.forEach {
+                createFolder(Folder(title: $0.attribute.title))
+            }
+        }
     }
-    
-    let realm = try! Realm()
     
     func createFolder(_ folder: Folder) {
         do {
@@ -29,10 +36,12 @@ final class ToDoRepository {
         return Array(realm.objects(Folder.self))
     }
     
-    func createItem(_ data: ToDo) {
+    func createItem(_ data: ToDo, category: MainListCategory) {
+        let folder = folders[category.rawValue]
+        
         do {
             try realm.write {
-                realm.add(data)
+                folder.list.append(data)
             }
         } catch {
             print("Create Error: \(error)")
