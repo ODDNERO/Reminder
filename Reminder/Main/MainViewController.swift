@@ -44,7 +44,6 @@ class MainViewController: BaseViewController<MainView> {
         addVC.delegate = self
         present(naviAddVC, animated: true)
     }
-    @objc private func addListButtonClicked() {
     @objc private func addFolderButtonClicked() {
         let addFolderVC = AddFolderViewController()
         let naviAddVC = UINavigationController(rootViewController: addFolderVC)
@@ -83,7 +82,6 @@ extension MainViewController {
         let flagCount = repository.readAllItem().filter("isFlag == true").count
         rootView.listCollectionView.reloadData()
         
-        let indexPath = IndexPath(item: MainListCategory.Flag.rawValue, section: 0)
         let indexPath = IndexPath(item: 3, section: 0)
         if let cell = rootView.listCollectionView.cellForItem(at: indexPath) as? MainCollectionViewCell {
             cell.update(category: .Flag, count: flagCount)
@@ -120,7 +118,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.update(category: .Flag, count: 0) //임시
         case .Done:
             cell.update(category: .Done, count: nil)
+        case .Custom(let customCategory):
+            if let customFolder = customFolders.first(where: { $0.title == customCategory.name }) {
+                cell.update(category: .Custom(customCategory), count: customFolder.list.count)
+            } else {
+                cell.update(category: .Custom(customCategory), count: 0)
+            }
         }
+        
         return cell
     }
     
@@ -130,4 +135,3 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
