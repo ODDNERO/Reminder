@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddFolderDelegate: AnyObject {
+    func folderAdded(_ folder: Folder)
+}
+
 final class AddFolderViewController: BaseViewController<AddFolderView> {
     var delegate: AddFolderDelegate?
     
@@ -36,6 +40,7 @@ final class AddFolderViewController: BaseViewController<AddFolderView> {
         let folder = Folder()
         folder.title = title
         folder.addDate = Date()
+        delegate?.folderAdded(folder)
         dismiss(animated: true)
     }
 }
