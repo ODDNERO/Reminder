@@ -14,25 +14,11 @@ protocol ReloadListDelegate {
 
 class MainViewController: BaseViewController<MainView> {
     private let repository = ToDoRepository()
-    private var list: Results<ToDo>? {
-        didSet {
-            rootView.listCollectionView.reloadData()
-        }
-    }
-    private var customFolders: [Folder] = []
+    private lazy var folders = repository.readAllFolders()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
-        list = repository.readAllItem()
-        customFolders = repository.readAllFolders()
-        print(customFolders)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        customFolders = repository.readAllFolders()
-        rootView.listCollectionView.reloadData()
     }
     
     override func settingDelegate() {
@@ -43,7 +29,7 @@ class MainViewController: BaseViewController<MainView> {
     
     override func addEventHandler() {
         rootView.addToDoButton.addTarget(self, action: #selector(addToDoButtonClicked), for: .touchUpInside)
-        rootView.addFolderButton.addTarget(self, action: #selector(addFolderButtonClicked), for: .touchUpInside)
+        //        rootView.addFolderButton.addTarget(self, action: #selector(addFolderButtonClicked), for: .touchUpInside)
     }
     @objc private func addToDoButtonClicked() {
         let addVC = AddViewController()
@@ -51,23 +37,23 @@ class MainViewController: BaseViewController<MainView> {
         addVC.delegate = self
         present(naviAddVC, animated: true)
     }
-    @objc private func addFolderButtonClicked() {
-        let addFolderVC = AddFolderViewController()
-        let naviAddVC = UINavigationController(rootViewController: addFolderVC)
-        addFolderVC.delegate = self
-        present(naviAddVC, animated: true)
-    }
+    //    @objc private func addFolderButtonClicked() {
+    //        let addFolderVC = AddFolderViewController()
+    //        let naviAddVC = UINavigationController(rootViewController: addFolderVC)
+    //        addFolderVC.delegate = self
+    //        present(naviAddVC, animated: true)
+    //    }
 }
 
-extension MainViewController: AddFolderDelegate {
-    func folderAdded(_ folder: Folder) {
-        repository.createFolder(folder)
-        customFolders.append(folder)
-        let customCategory = CustomCategory(name: folder.title, symbolImage: UIImage(systemName: "folder.fill"), color: .systemGray)
-        MainListCategory.addCustomCategory(customCategory)
-        rootView.listCollectionView.reloadData()
-    }
-}
+//extension MainViewController: AddFolderDelegate {
+//    func folderAdded(_ folder: Folder) {
+//        repository.createFolder(folder)
+//        customFolders.append(folder)
+//        let customCategory = CustomCategory(name: folder.title, symbolImage: UIImage(systemName: "folder.fill"), color: .systemGray)
+//        MainListCategory.addCustomCategory(customCategory)
+//        rootView.listCollectionView.reloadData()
+//    }
+//}
 
 extension MainViewController {
     private func settingNavigationBar() {
@@ -100,39 +86,28 @@ extension MainViewController {
 
 extension MainViewController: ReloadListDelegate {
     func reloadList() {
-        list = repository.readAllItem()
+        folders = repository.readAllFolders()
+        rootView.listCollectionView.reloadData()
     }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MainListCategory.allCases.count
+        return folders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let category = MainListCategory.allCases[indexPath.item]
+        let folder = folders[indexPath.item]
+        let count = folder.list.count
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as! MainCollectionViewCell
         
         switch category {
-        case .Today:
-            cell.update(category: .Today, count: 0) //임시
-        case .Schedule:
-            cell.update(category: .Schedule, count: 0) //임시
-        case .Total:
-            let count = list?.count ?? 0
-            cell.update(category: .Total, count: count)
-        case .Flag:
-            cell.update(category: .Flag, count: 0) //임시
         case .Done:
-            cell.update(category: .Done, count: nil)
-        case .Custom(let customCategory):
-            if let customFolder = customFolders.first(where: { $0.title == customCategory.name }) {
-                cell.update(category: .Custom(customCategory), count: customFolder.list.count)
-            } else {
-                cell.update(category: .Custom(customCategory), count: 0)
-            }
+            cell.update(category: category, count: nil)
+        default:
+            cell.update(category: category, count: count)
         }
-        
         return cell
     }
     
