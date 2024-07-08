@@ -8,19 +8,25 @@
 import UIKit
 import RealmSwift
 
-class ToDoDetailViewController: BaseViewController<ToDoDetailView>, SendDataDelegate {
-    func sendTodoList(data: RealmSwift.Results<Todo>) {
-        rootView.deadlineLabel.text = data[0].deadline
-        rootView.tagLabel.text = data[0].tag
-        rootView.priorityLabel.text = data[0].priority
-        rootView.titleLabel.text = data[0].toDoTitle
-        rootView.memoLabel.text = data[0].memo
-    }
+class ToDoDetailViewController: BaseViewController<ToDoDetailView> {
+    var todoData: ToDo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let listVC = ListViewController()
-        listVC.delegate = self
+        if let todo = todoData {
+//            rootView.titleLabel.text = todo.toDoTitle
+//            rootView.memoLabel.text = todo.memo
+//            rootView.deadlineLabel.text = todo.deadline
+//            rootView.tagLabel.text = todo.tag
+//            rootView.priorityLabel.text = todo.priority
+            
+            //임시
+            rootView.titleLabel.text = "타이틀"
+            rootView.memoLabel.text = "메모"
+            rootView.deadlineLabel.text = "마감일"
+            rootView.tagLabel.text = "태그"
+            rootView.priorityLabel.text = "우선순위"
+        }
     }
 }
+
