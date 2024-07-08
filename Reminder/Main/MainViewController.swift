@@ -14,26 +14,25 @@ protocol ReloadListDelegate {
 
 class MainViewController: BaseViewController<MainView> {
     private let repository = ToDoRepository()
-//    private var list: Results<ToDo>? {
-//        didSet {
-//            rootView.listCollectionView.reloadData()
-//        }
-//    }
-    private var folderList: [Folder] = []
-    
-    var folder: Folder?
-    var list: [ToDo] = []
+    private var list: Results<ToDo>? {
+        didSet {
+            rootView.listCollectionView.reloadData()
+        }
+    }
+    private var customFolders: [Folder] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
-//        list = repository.readAllItem()
-        folderList = repository.readAllFolders()
-        
-        if let folder {
-            let value = folder.list
-            list = Array(value)
-        }
+        list = repository.readAllItem()
+        customFolders = repository.readAllFolders()
+        print(customFolders)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        customFolders = repository.readAllFolders()
+        rootView.listCollectionView.reloadData()
     }
     
     override func settingDelegate() {
@@ -63,7 +62,7 @@ class MainViewController: BaseViewController<MainView> {
 extension MainViewController: AddFolderDelegate {
     func folderAdded(_ folder: Folder) {
         repository.createFolder(folder)
-        folderList.append(folder)
+        customFolders.append(folder)
         let customCategory = CustomCategory(name: folder.title, symbolImage: UIImage(systemName: "folder.fill"), color: .systemGray)
         MainListCategory.addCustomCategory(customCategory)
         rootView.listCollectionView.reloadData()
@@ -123,12 +122,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let count = list?.count ?? 0
             cell.update(category: .Total, count: count)
         case .Flag:
-            let count =
             cell.update(category: .Flag, count: 0) //임시
         case .Done:
             cell.update(category: .Done, count: nil)
         case .Custom(let customCategory):
-            if let customFolder = folderList.first(where: { $0.title == customCategory.name }) {
+            if let customFolder = customFolders.first(where: { $0.title == customCategory.name }) {
                 cell.update(category: .Custom(customCategory), count: customFolder.list.count)
             } else {
                 cell.update(category: .Custom(customCategory), count: 0)
