@@ -71,17 +71,17 @@ extension MainViewController {
         return UIMenu(children: [action1, action2])
     }
     
-    private func reloadFlagCount() {
-        let flagCount = repository.readAllItem().filter("isFlag == true").count
-        rootView.listCollectionView.reloadData()
-        
-        let indexPath = IndexPath(item: 3, section: 0)
-        if let cell = rootView.listCollectionView.cellForItem(at: indexPath) as? MainCollectionViewCell {
-            cell.update(category: .Flag, count: flagCount)
-        } else {
-            rootView.listCollectionView.reloadData()
-        }
-    }
+//    private func reloadFlagCount() {
+//        let flagCount = repository.readAllItem().filter("isFlag == true").count
+//        rootView.listCollectionView.reloadData()
+//        
+//        let indexPath = IndexPath(item: 3, section: 0)
+//        if let cell = rootView.listCollectionView.cellForItem(at: indexPath) as? MainCollectionViewCell {
+//            cell.update(category: .Flag, count: flagCount)
+//        } else {
+//            rootView.listCollectionView.reloadData()
+//        }
+//    }
 }
 
 extension MainViewController: ReloadListDelegate {
@@ -112,8 +112,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ListViewController()
-        vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)
+        let listVC = ListViewController()
+        listVC.folder = folders[indexPath.item]
+        listVC.category = MainListCategory.allCases[indexPath.item]
+        listVC.delegate = self
+        navigationController?.pushViewController(listVC, animated: true)
     }
 }

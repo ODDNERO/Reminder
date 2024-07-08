@@ -11,6 +11,7 @@ import RealmSwift
 final class ListViewController: BaseViewController<ListView> {
     var delegate: ReloadListDelegate?
     let repository = ToDoRepository()
+    var category: MainListCategory?
     
     private var list: Results<ToDo>? {
         didSet {
@@ -22,6 +23,8 @@ final class ListViewController: BaseViewController<ListView> {
         super.viewDidLoad()
         settingNavigationBar()
         list = repository.readAllItem()
+        rootView.categoryLabel.text = category?.attribute.title
+        rootView.categoryLabel.textColor = category?.attribute.color
         rootView.listTableView.reloadData()
     }
     
