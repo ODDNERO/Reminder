@@ -9,7 +9,21 @@ import Foundation
 import RealmSwift
 
 final class ToDoRepository {
-    let realm = try! Realm() 
+    let realm = try! Realm()
+    
+    func createFolder(_ folder: Folder) {
+        do {
+            try realm.write {
+                realm.add(folder)
+            }
+        } catch {
+            print("Create Folder Error: \(error)")
+        }
+    }
+    
+    func readAllFolders() -> [Folder] {
+        return Array(realm.objects(Folder.self))
+    }
     
     func createItem(_ data: ToDo) {
         do {
