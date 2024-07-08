@@ -11,8 +11,6 @@ import SnapKit
 final class ListView: BaseView {
     let categoryLabel = {
         let label = UILabel()
-        label.text = "전체" //임시
-        label.textColor = .systemBlue //임시
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
     }()

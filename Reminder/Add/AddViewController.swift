@@ -94,7 +94,7 @@ extension AddViewController {
         let memo = rootView.memoTextField.text
         
         let data = ToDo(toDoTitle: title, memo: memo, deadline: deadline, tag: tag, priority: priority)
-        repository.createItem(data)
+        repository.createItem(data, category: .Total)
         delegate?.reloadList()
         dismiss(animated: true, completion: nil)
     }
