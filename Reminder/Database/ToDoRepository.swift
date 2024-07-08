@@ -48,13 +48,30 @@ final class ToDoRepository {
         }
     }
     
-    func readAllItem() -> Results<ToDo> {
-        return realm.objects(ToDo.self).sorted(byKeyPath: "deadline", ascending: true)
+    func readFolderItems(category: MainListCategory) -> [ToDo] {
+        return Array(folders[category.rawValue].list)
     }
     
-    func updateItem<T>(_ data: ToDo, coulmn: String, value: T) {
+    func readAllItem() -> [ToDo] {
+        return Array(realm.objects(ToDo.self).sorted(byKeyPath: "deadline", ascending: true))
+    }
+    
+    func sortedList(folder: Folder, byKeyPath: String) -> [ToDo] {
+        return Array(folder.list.sorted(byKeyPath: byKeyPath, ascending: true))
+    }
+    
+    func updateItem<T>(_ data: ToDo, coulmn: String, value: T, category: MainListCategory, isAdding: Bool) {
+        let folder = folders[category.rawValue]
         do {
-            try realm.create(ToDo.self, value: ["id": data.id, coulmn: value], update: .modified)
+            try realm.write {
+                realm.create(ToDo.self, value: ["id": data.id, coulmn: value], update: .modified)
+                if isAdding {
+                    folder.list.append(data)
+                } else {
+                    guard let index = folder.list.firstIndex(where: { $0.id == data.id }) else { return }
+                    folder.list.remove(at: index)
+                }
+            }
         } catch {
             print("Update Error: \(error)")
         }
@@ -78,11 +95,11 @@ final class ToDoRepository {
         }
     }
     
-    func filterSearchTitleItem(_ searchText: String) -> Results<ToDo> {
+    func filterSearchTitleItem(_ searchText: String) -> [ToDo] {
         let filter = realm.objects(ToDo.self).where {
             $0.toDoTitle.contains(searchText)
         }
         let result = searchText.isEmpty ? realm.objects(ToDo.self) : filter
-        return result
+        return Array(result)
     }
 }

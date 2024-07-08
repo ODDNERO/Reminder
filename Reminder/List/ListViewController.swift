@@ -11,9 +11,10 @@ import RealmSwift
 final class ListViewController: BaseViewController<ListView> {
     var delegate: ReloadListDelegate?
     let repository = ToDoRepository()
+    var folder: Folder?
     var category: MainListCategory?
     
-    private var list: Results<ToDo>? {
+    private var list: [ToDo] = [] {
         didSet {
             rootView.listTableView.reloadData()
         }
@@ -22,9 +23,9 @@ final class ListViewController: BaseViewController<ListView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
-        list = repository.readAllItem()
         rootView.categoryLabel.text = category?.attribute.title
         rootView.categoryLabel.textColor = category?.attribute.color
+        list = Array(folder!.list)
         rootView.listTableView.reloadData()
     }
     
@@ -52,10 +53,10 @@ extension ListViewController {
     }
     private func configurePullDownButton() -> UIMenu {
         let byDeadlineAction = UIAction(title: "마감일 순으로 보기") { _ in
-            self.list = self.list?.sorted(byKeyPath: "deadline", ascending: true)
+            self.list = self.repository.sortedList(folder: self.folder!, byKeyPath: "deadline")
         }
         let bytitleAction = UIAction(title: "제목 순으로 보기") { _ in
-            self.list = self.list?.sorted(byKeyPath: "toDoTitle", ascending: true)
+            self.list = self.repository.sortedList(folder: self.folder!, byKeyPath: "toDoTitle")
         }
         return UIMenu(children: [byDeadlineAction, bytitleAction])
     }
@@ -63,12 +64,12 @@ extension ListViewController {
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list?.count ?? 0
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier) as! ListTableViewCell
-        let data = list![indexPath.row]
+        let data = list[indexPath.row]
         cell.update(data: data)
         return cell
     }
@@ -100,7 +101,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let toDoDetailVC = ToDoDetailViewController()
-        toDoDetailVC.todoData = list?[indexPath.row]
+        toDoDetailVC.todoData = list[indexPath.row]
         navigationController?.pushViewController(ToDoDetailViewController(), animated: true)
     }
 }
