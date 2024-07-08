@@ -41,6 +41,8 @@
 		CE7902272C36208900F8EAB6 /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902262C36208900F8EAB6 /* ToDoDetailViewController.swift */; };
 		CE7902292C36209F00F8EAB6 /* ToDoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7902282C36209F00F8EAB6 /* ToDoDetailView.swift */; };
 		CE79022F2C36675B00F8EAB6 /* ToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79022E2C36675A00F8EAB6 /* ToDoRepository.swift */; };
+		CEE0229B2C3C0DA300208A8A /* AddFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0229A2C3C0DA300208A8A /* AddFolderViewController.swift */; };
+		CEE0229D2C3C0DEC00208A8A /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0229C2C3C0DEC00208A8A /* AddFolderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +92,8 @@
 		CE7902262C36208900F8EAB6 /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
 		CE7902282C36209F00F8EAB6 /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
 		CE79022E2C36675A00F8EAB6 /* ToDoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepository.swift; sourceTree = "<group>"; };
+		CEE0229A2C3C0DA300208A8A /* AddFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderViewController.swift; sourceTree = "<group>"; };
+		CEE0229C2C3C0DEC00208A8A /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 				CE7902042C35908A00F8EAB6 /* Main */,
 				CE7901E02C3401EE00F8EAB6 /* List */,
 				CE7901E12C34020200F8EAB6 /* Add */,
+				CEE022992C3C0D3200208A8A /* AddFolder */,
 				CE7901D12C33F78800F8EAB6 /* Assets.xcassets */,
 				CE7901D32C33F78900F8EAB6 /* LaunchScreen.storyboard */,
 				CE7901D62C33F78900F8EAB6 /* Info.plist */,
@@ -264,6 +269,15 @@
 			path = ToDoDetail;
 			sourceTree = "<group>";
 		};
+		CEE022992C3C0D3200208A8A /* AddFolder */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0229A2C3C0DA300208A8A /* AddFolderViewController.swift */,
+				CEE0229C2C3C0DEC00208A8A /* AddFolderView.swift */,
+			);
+			path = AddFolder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,7 +379,9 @@
 				CE79022F2C36675B00F8EAB6 /* ToDoRepository.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
 				CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */,
+				CEE0229D2C3C0DEC00208A8A /* AddFolderView.swift in Sources */,
 				CE7902292C36209F00F8EAB6 /* ToDoDetailView.swift in Sources */,
+				CEE0229B2C3C0DA300208A8A /* AddFolderViewController.swift in Sources */,
 				CE7901F72C34220C00F8EAB6 /* ListTableViewCell.swift in Sources */,
 				CE7901CB2C33F78600F8EAB6 /* SceneDelegate.swift in Sources */,
 				CE7901FD2C342A1800F8EAB6 /* ToDo.swift in Sources */,
