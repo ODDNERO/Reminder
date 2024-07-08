@@ -75,21 +75,20 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let data = folder!.list[indexPath.row]
+        
         let delete = UIContextualAction(style: .destructive, title: "삭제") { action, view, completionHandler in
-            self.repository.deleteItem(self.list![indexPath.row])
+            self.repository.deleteItem(self.list[indexPath.row])
             self.rootView.listTableView.reloadData()
             self.delegate?.reloadList()
         }
         let flag = UIContextualAction(style: .normal, title: "깃발") { action, view, completionHandler in
-            try! self.repository.realm.write {
-                self.list![indexPath.row].isFlag.toggle()
-            }
-            self.rootView.listTableView.reloadData()
+            self.repository.updateItem(data, coulmn: "isFlag", value: !data.isFlag, category: .Flag, isAdding: !data.isFlag)
             self.delegate?.reloadList()
-            self.list = self.repository.readAllItem()
+            self.list = Array(self.folder!.list)
         }
         
-        switch list![indexPath.row].isFlag {
+        switch list[indexPath.row].isFlag {
         case true:
             flag.image = UIImage(systemName: "flag.fill")
         case false:
