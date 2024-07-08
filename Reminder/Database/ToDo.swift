@@ -16,7 +16,7 @@ class ToDo: Object {
     @Persisted var tag: String?
     @Persisted var priority: String?
     @Persisted var isComplete: Bool?
-    @Persisted var isFlag: Bool?
+    @Persisted var isFlag: Bool
     
     convenience init(toDoTitle: String, memo: String?, deadline: String, tag: String, priority: String, isComplete: Bool = false, isFlag: Bool = false) {
         self.init()

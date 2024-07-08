@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 final class ToDoRepository {
-    private let realm = try! Realm() 
+    let realm = try! Realm() 
     
     func createItem(_ data: ToDo) {
         do {
