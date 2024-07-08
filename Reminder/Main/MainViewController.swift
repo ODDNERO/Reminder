@@ -41,6 +41,14 @@ class MainViewController: BaseViewController<MainView> {
         addVC.delegate = self
         present(naviAddVC, animated: true)
     }
+    @objc private func addListButtonClicked() {
+        let addFolderVC = AddFolderViewController()
+        let naviAddVC = UINavigationController(rootViewController: addFolderVC)
+        addFolderVC.delegate = self
+        present(naviAddVC, animated: true)
+    }
+}
+
 }
 
 extension MainViewController {
@@ -64,6 +72,7 @@ extension MainViewController {
         rootView.listCollectionView.reloadData()
         
         let indexPath = IndexPath(item: MainListCategory.Flag.rawValue, section: 0)
+        let indexPath = IndexPath(item: 3, section: 0)
         if let cell = rootView.listCollectionView.cellForItem(at: indexPath) as? MainCollectionViewCell {
             cell.update(category: .Flag, count: flagCount)
         } else {

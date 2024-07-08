@@ -45,10 +45,10 @@ final class MainView: BaseView {
         button.configuration = configuration
         return button
     }()
-    let addListButton = {
+    let addFolderButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
-        configuration.title = "목록 추가"
+        configuration.title = "폴더 추가"
         configuration.titleAlignment = .trailing
         configuration.baseForegroundColor = .systemBlue
         button.configuration = configuration
@@ -56,7 +56,7 @@ final class MainView: BaseView {
     }()
     
     override func configureHierarchy() {
-        [templateLabel, listCollectionView, addToDoButton, addListButton].forEach {
+        [templateLabel, listCollectionView, addToDoButton, addFolderButton].forEach {
             self.addSubview($0)
         }
     }
@@ -76,7 +76,7 @@ final class MainView: BaseView {
             $0.leading.bottom.equalTo(self.safeAreaLayoutGuide).inset(10)
             $0.height.equalTo(30)
         }
-        addListButton.snp.makeConstraints {
+        addFolderButton.snp.makeConstraints {
             $0.trailing.bottom.equalTo(self.safeAreaLayoutGuide).inset(10)
             $0.height.equalTo(30)
         }
