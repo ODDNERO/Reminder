@@ -9,6 +9,10 @@ import Foundation
 import RealmSwift
 
 final class ToDoRepository {
+    init() {
+        print(realm.configuration.fileURL)
+    }
+    
     let realm = try! Realm()
     
     func createFolder(_ folder: Folder) {
