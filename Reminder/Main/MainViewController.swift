@@ -19,11 +19,13 @@ class MainViewController: BaseViewController<MainView> {
             rootView.listCollectionView.reloadData()
         }
     }
+    private var customFolders: [Folder] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigationBar()
         list = repository.readAllItem()
+        customFolders = repository.readAllFolders()
     }
     
     override func settingDelegate() {
@@ -34,6 +36,7 @@ class MainViewController: BaseViewController<MainView> {
     
     override func addEventHandler() {
         rootView.addToDoButton.addTarget(self, action: #selector(addToDoButtonClicked), for: .touchUpInside)
+        rootView.addFolderButton.addTarget(self, action: #selector(addFolderButtonClicked), for: .touchUpInside)
     }
     @objc private func addToDoButtonClicked() {
         let addVC = AddViewController()
@@ -42,6 +45,7 @@ class MainViewController: BaseViewController<MainView> {
         present(naviAddVC, animated: true)
     }
     @objc private func addListButtonClicked() {
+    @objc private func addFolderButtonClicked() {
         let addFolderVC = AddFolderViewController()
         let naviAddVC = UINavigationController(rootViewController: addFolderVC)
         addFolderVC.delegate = self
@@ -49,6 +53,14 @@ class MainViewController: BaseViewController<MainView> {
     }
 }
 
+extension MainViewController: AddFolderDelegate {
+    func folderAdded(_ folder: Folder) {
+        repository.createFolder(folder)
+        customFolders.append(folder)
+        let customCategory = CustomCategory(name: folder.title, symbolImage: UIImage(systemName: "folder.fill"), color: .systemGray)
+        MainListCategory.addCustomCategory(customCategory)
+        rootView.listCollectionView.reloadData()
+    }
 }
 
 extension MainViewController {
