@@ -43,6 +43,7 @@
 		CE79022F2C36675B00F8EAB6 /* ToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE79022E2C36675A00F8EAB6 /* ToDoRepository.swift */; };
 		CEE0229B2C3C0DA300208A8A /* AddFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0229A2C3C0DA300208A8A /* AddFolderViewController.swift */; };
 		CEE0229D2C3C0DEC00208A8A /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0229C2C3C0DEC00208A8A /* AddFolderView.swift */; };
+		CEE022AF2C3D4DD700208A8A /* DeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE022AE2C3D4DD700208A8A /* DeadlineViewModel.swift */; };
 		CEE022B12C3D4E6B00208A8A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE022B02C3D4E6B00208A8A /* Observable.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		CE79022E2C36675A00F8EAB6 /* ToDoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepository.swift; sourceTree = "<group>"; };
 		CEE0229A2C3C0DA300208A8A /* AddFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderViewController.swift; sourceTree = "<group>"; };
 		CEE0229C2C3C0DEC00208A8A /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
+		CEE022AE2C3D4DD700208A8A /* DeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineViewModel.swift; sourceTree = "<group>"; };
 		CEE022B02C3D4E6B00208A8A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 			children = (
 				CE7902152C35DE8600F8EAB6 /* DeadlineViewController.swift */,
 				CE7902172C35DEAA00F8EAB6 /* DeadlineView.swift */,
+				CEE022AE2C3D4DD700208A8A /* DeadlineViewModel.swift */,
 			);
 			path = Deadline;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				CE79022F2C36675B00F8EAB6 /* ToDoRepository.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
 				CE7902242C35DF6C00F8EAB6 /* ImageAddView.swift in Sources */,
+				CEE022AF2C3D4DD700208A8A /* DeadlineViewModel.swift in Sources */,
 				CEE0229D2C3C0DEC00208A8A /* AddFolderView.swift in Sources */,
 				CE7902292C36209F00F8EAB6 /* ToDoDetailView.swift in Sources */,
 				CEE0229B2C3C0DA300208A8A /* AddFolderViewController.swift in Sources */,
