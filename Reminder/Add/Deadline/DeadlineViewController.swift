@@ -15,14 +15,13 @@ final class DeadlineViewController: BaseViewController<DeadlineView> {
         bindViewModel()
     }
     
-    override func addEventHandler() {
-        rootView.deadlineDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         viewModel.inputViewWillDisappearTrigger.value = ()
     }
     
+    override func addEventHandler() {
+        rootView.deadlineDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+    }
     @objc private func datePickerChanged(datePicker: UIDatePicker) {
         viewModel.inputDate.value = datePicker.date
     }

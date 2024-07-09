@@ -17,7 +17,7 @@ class DeadlineViewModel {
     var outputDeadline: Observable<String> = Observable("")
     
     init() {
-        inputDate.bind { date in
+        inputDate.bind { _ in
             self.formatDay()
         }
         
