@@ -45,6 +45,7 @@
 		CEE0229D2C3C0DEC00208A8A /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0229C2C3C0DEC00208A8A /* AddFolderView.swift */; };
 		CEE022AF2C3D4DD700208A8A /* DeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE022AE2C3D4DD700208A8A /* DeadlineViewModel.swift */; };
 		CEE022B12C3D4E6B00208A8A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE022B02C3D4E6B00208A8A /* Observable.swift */; };
+		CEE022B32C3D644500208A8A /* PriorityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE022B22C3D644500208A8A /* PriorityViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -98,6 +99,7 @@
 		CEE0229C2C3C0DEC00208A8A /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
 		CEE022AE2C3D4DD700208A8A /* DeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineViewModel.swift; sourceTree = "<group>"; };
 		CEE022B02C3D4E6B00208A8A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		CEE022B22C3D644500208A8A /* PriorityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 			children = (
 				CE79021D2C35DEE400F8EAB6 /* PriorityViewController.swift */,
 				CE79021F2C35DEF200F8EAB6 /* PriorityView.swift */,
+				CEE022B22C3D644500208A8A /* PriorityViewModel.swift */,
 			);
 			path = Priority;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				CE7901F52C3406C000F8EAB6 /* AddViewController.swift in Sources */,
 				CE79021C2C35DECF00F8EAB6 /* TagView.swift in Sources */,
 				CEE022B12C3D4E6B00208A8A /* Observable.swift in Sources */,
+				CEE022B32C3D644500208A8A /* PriorityViewModel.swift in Sources */,
 				CE7901C92C33F78600F8EAB6 /* AppDelegate.swift in Sources */,
 				CE79022F2C36675B00F8EAB6 /* ToDoRepository.swift in Sources */,
 				CE7901E52C34025500F8EAB6 /* ListView.swift in Sources */,
